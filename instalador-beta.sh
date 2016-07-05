@@ -1,7 +1,14 @@
 #!/bin/bash
 
+#
+# TODO: COLOCAR NO /OPT	
+#
+
 read -p "Digite sua senha: " -res senha
 clear
+
+mkdir ~/all-packs
+cd all-packs
 
 echo "=============== Atualizando os repositorios ==============="
 sleep 5
@@ -24,16 +31,39 @@ echo "lib32bz2-1.0"
 echo "lib32stdc++6"
 sleep 5
 sudo apt-get install ubuntu-restricted-extras -y
+|| clear && echo "ubuntu-restricted"
+ sleep 3 && clear
+echo "ubuntu-restricted-extras"
 sudo apt-get install build-essential -y
+|| clear && echo "build-essential"
+sleep 3 && clear
 sudo apt-get install libgnome-keyring-dev -y
+|| clear echo "libgnome-keyring-dev"
+sleep 3 && clear
 sudo apt-get install linux-headers -y
+|| clear && echo "linux-headers"
+sleep 3 && clear
 sudo apt-get install libavcodec-extra -y
+|| clear && echo "libavcodec-extra"
+sleep 3 && clear
 sudo apt-get install ia32-libs -y
-sudo apt-get install libc6-i386 -y 
+|| clear && echo "ia32-libs"
+sleep 3 && clear
+sudo apt-get install libc6-i386 -y
+|| clear && echo "libc6-i836"
+sleep 3 && clear
 sudo apt-get install lib32z1 -y
+|| clear && echo "lib32z1"
+sleep 3 && clear
 sudo apt-get install lib32ncurses5 -y
+|| clear && echo "lib32ncurses5"
+sleep 3 && clear 
 sudo apt-get install lib32bz2-1.0 -y
+|| clear && echo "lib32bz2"
+sleep 3 && clear
 sudo apt-get install lib32stdc++6 -y
+|| clear && echo "lib32stdc++6"
+sleep 3 && clear
 clear
 # TODO: Testa um por um
 
@@ -98,7 +128,6 @@ clear
 # TODO: Fazer de outra maneira
 echo "=============== .DEBs  ==============="
 sleep 5
-cd ~/Downloads
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 wget https://launchpad.net/~atareao/+archive/ubuntu/telegram/+files/telegram_0.9.56-0ubuntu1_amd64.deb
 wget https://download.sublimetext.com/sublime-text_build-3114_amd64.deb
@@ -151,8 +180,8 @@ clear
 echo "=============== Instalando o SYNAPTIC ==============="
 sleep 5
 wget https://launchpadlibrarian.net/195345684/synaptic_0.81.3_amd64.deb -O synaptic.deb
-sudo dpkg -i synaptic.deb
-sudo apt-get install -f
+#sudo dpkg -i synaptic.deb
+#sudo apt-get install -f
 #sudo apt-get remove synaptic
 #sudo apt-get autoremove
 clear
@@ -278,5 +307,23 @@ echo "para"
 echo "# listen_address = '*'"
 echo "Salve, feche o arquivo e reinice o database:"
 echo "sudo service postgresql restart"
+# "=============== Instalando o postgresql ==============="
+
+echo "=============== Instalando o virtualbox-guest-utils ==============="
+sleep 5
+sudo apt-get install virtualbox-guest-utils -y 
+clear
+echo "=============== Instalando o virtualbox-guest-x11 ==============="
+sleep 5
+sudo apt-get install virtualbox-guest-x11 -y 
+clear
+echo "=============== Instalando o virtualbox-guest-dkms ==============="
+sleep 5
+sudo apt-get install virtualbox-guest-dkms -y
+clear
+echo "=============== Instalando o virtualbox-guest-additions-ios ==============="
+sleep 5
+sudo apt-get install virtualbox-guest-additions-iso -y
+clear
 
 $senha="\t"
