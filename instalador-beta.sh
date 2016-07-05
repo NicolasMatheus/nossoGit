@@ -67,9 +67,9 @@ sleep 3 && clear
 clear
 # TODO: Testa um por um
 
-echo "=============== Instalando o JAVA - openjdk-8-jdk ==============="
+echo "=============== Instalando o JAVA - openjdk-7-jdk ==============="
 sleep 5
-sudo apt-get install openjdk-8-jdk -y
+sudo apt-get install openjdk-7-jdk -y
 clear
 
 echo "=============== Instalando unity-tweak-tool ==============="
@@ -326,4 +326,30 @@ sleep 5
 sudo apt-get install virtualbox-guest-additions-iso -y
 clear
 
+echo "=============== Instalando o tree ==============="
+sleep 5
+sudo apt-get install tree -y
+clear
+
+echo "=============== Instalando o samba ==============="
+sleep 5
+sudo apt-get install samba -y
+clear
+echo "=============== Instalando o nmap ==============="
+sleep 5
+sudo apt-get install nmap -y
+clear
+echo "=============== Instalando o filezilla ==============="
+sleep 5
+sudo apt-get install filezilla -y
+clear
+echo "=============== Instalando o idle ==============="
+sleep 5
+sudo apt-get install idle -y
+clear
+
+echo "=============== Instalando o texlive-latex-base ==============="
+sleep 5
+sudo apt-get -y install texlive-latex-base -y
+clear
 $senha="\t"
