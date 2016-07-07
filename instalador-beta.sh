@@ -352,4 +352,8 @@ echo "=============== Instalando o texlive-latex-base ==============="
 sleep 5
 sudo apt-get -y install texlive-latex-base -y
 clear
+echo "=============== Instalando o laptop-mode-tools ==============="
+sleep 5
+sudo apt-get install laptop-mode-tools
+clear
 $senha="\t"
