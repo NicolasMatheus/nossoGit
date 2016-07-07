@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Para ler os dados sem que apareça os mesmo. 
 read -p "Digite sua senha: " -res senha
 
 echo "Habilitando a função de hibernar"
 #echo $senha | sudo -ES touch /var/lib/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
+cd /tmp/
 echo $senha | sudo -ES echo " [Re-enable hibernate by default in upower]
  Identity=unix-user:*
  Action=org.freedesktop.upower.hibernate
@@ -14,7 +14,7 @@ echo $senha | sudo -ES echo " [Re-enable hibernate by default in upower]
  Identity=unix-user:*
  Action=org.freedesktop.login1.hibernate;org.freedesktop.login1.handle-hibernate-key;org.freedesktop.login1;org.freedesktop.login1.hibernate-multiple-sessions;org.freedesktop.login1.hibernate-ignore-inhibit
  ResultActive=yes" >> com.ubuntu.enable-hibernate.pkla
-echo $senha | sudo -ES cp -fr com.ubuntu.enable-hibernate.pkla /var/lib/polkit-1/localauthority/50-local.d/
+echo $senha | sudo -ES mv -fr com.ubuntu.enable-hibernate.pkla /var/lib/polkit-1/localauthority/50-local.d/
 # Passa a senha digitada acima como paramento para o sudo -ES
 #echo $senha | sudo -ES touch /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
 #echo $senha | sudo -ES sudo echo "[Re-enable hibernate by default in upower]
