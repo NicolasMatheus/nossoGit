@@ -4,6 +4,7 @@ sudo rm -Rf /opt/franz*
 sudo rm -Rf /usr/bin/franz
 sudo rm -Rf /usr/share/applications/franz.desktop
 
+cd /tmp/
 wget https://github.com/imprecision/franz-app/releases/download/3.1.0/Franz-linux-x64-3.1.0.tgz -O franz.tgz
 sudo mkdir /opt/franz
 sudo tar -vzxf franz.tgz -C /opt/franz/
