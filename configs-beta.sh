@@ -28,7 +28,7 @@ echo $senha | sudo -ES mv -fr com.ubuntu.enable-hibernate.pkla /var/lib/polkit-1
 # ResultActive=yes" >> /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkl
 
 echo "Remove a conta guest"
-echo $senha | sudo -ES mkdir /etc/lightdm/lightdm.conf.d && sudo sh -c 'printf "[SeatDefaults]\nallow-guest=false\n" > /etc/lightdm/lightdm.conf.d/5no-guest.conf'
+echo $senha | sudo -ES mkdir /etc/lightdm/lightdm.conf.d && sudo sh -c 'printf "[SeatDefaults]\nallow-guest=false\n" > /etc/lightdm/lightdm.conf.d/no-guest.conf'
 echo $senha | sudo -ES rm /etc/lightdm/lightdm.conf.d/no-guest.conf
 #echo $senha | sudo -ES rm /etc/lightdm/lightdm.conf.d/5no-guest.con
 echo $senha | sudo -ES restart
