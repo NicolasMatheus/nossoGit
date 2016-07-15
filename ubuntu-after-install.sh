@@ -253,7 +253,7 @@ fi
 #############################################################################
 read -p "Deseja instala o postgresql: [y/n] " -re pgs
 if [ $pgs = "y" -o $pgs = "Y" ];
-then	
+then
 	echo "======================================================="
 	echo "=============== Instalando o postgresql ==============="
 	echo "======================================================="
@@ -468,16 +468,36 @@ then
 fi
 # TODO: Testar
 #############################################################################
-read -p "Deseja instalar o nodejs: [y/n] " -re njs
+read -p "Deseja instalar o nodejs-LTS: [y/n] " -re njs
 if [ $njs = "y" -o $njs = "Y" ];
 then
 	echo "==================================================="
 	echo "=============== Instalando o nodeJS ==============="
-	echo "==================================================="  
+	echo "==================================================="
 	sleep 3
 	wget https://nodejs.org/dist/v4.4.7/node-v4.4.7.tar.gz
 	tar zxvf node-v4.4.7.tar.gz
 	cd node-v4.4.7/
+	bash -c "./configure"
+	make
+	ln -fs out/Release/node node
+	sudo make install
+	clear
+	node -v
+	sleep 3
+	clear
+fi
+#############################################################################
+read -p "Deseja instalar o nodejs-current: [y/n] " -re njsc
+if [ $njsc = "y" -o $njsc = "Y" ];
+then
+	echo "============================================================="
+	echo "=============== Instalando o nodeJS - Current ==============="
+	echo "============================================================="
+	sleep 3
+	wget https://nodejs.org/dist/v6.3.0/node-v6.3.0.tar.gz
+	tar zxvf node-v6.3.0.tar.gz
+	cd node-v6.3.0/
 	bash -c "./configure"
 	make
 	ln -fs out/Release/node node
@@ -495,7 +515,7 @@ then
 	echo "=============== Instalando o ionic ==============="
 	echo "=================================================="
 	sleep 3
-	sudo npm install -g ionic 
+	sudo npm install -g ionic
 	clear
 fi
 #############################################################################
@@ -506,7 +526,7 @@ then
 	echo "=============== Instalando o cordova ==============="
 	echo "===================================================="
 	sleep 3
-	sudo npm install -g cordova 
+	sudo npm install -g cordova
 	clear
 fi
 #############################################################################
@@ -517,7 +537,7 @@ then
 	echo "=============== Instalando o http-server ==============="
 	echo "========================================================"
 	sleep 3
-	sudo npm install -g http-server 
+	sudo npm install -g http-server
 	clear
 fi
 #############################################################################
@@ -541,5 +561,14 @@ then
 	sleep 3
 	sudo npm install -g bower
 	clear
+fi
+#############################################################################
+read -p "Deseja instalar o docker: [y/n] " -re docker
+if [ $docker = "y" -o $docker = "Y" ];
+then
+	echo "==================================================="
+	echo "=============== Instalando o docker ==============="
+	echo "==================================================="
+	sudo curl -sSL https://get.docker.com/ | sh
 fi
 #############################################################################
