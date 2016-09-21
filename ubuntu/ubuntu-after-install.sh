@@ -446,8 +446,9 @@ then
 	wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
 	tar -xvzf android-sdk_r24.4.1-linux.tgz
 	sudo mv android-sdk-linux/ /opt/
-	sh -c "echo 'export PATH=$PATH:/opt/android-sdk-linux/tools' >> ~/.bashrc"
-	sh -c "echo 'export PATH=$PATH:/opt/android-sdk-linux/platform-tools' >> ~/.bashrc"
+	sh -c "echo 'export ANDROID_HOME=/opt/android-sdk-linux' >> ~/.bashrc"
+	sh -c "echo 'export PATH=$PATH:$ANDROID_HOME/tools' >> ~/.bashrc"
+	sh -c "echo 'export PATH=$PATH:$ANDROID_HOME/platform-tools' >> ~/.bashrc"
 	clear
 fi
 # TODO: Testar
