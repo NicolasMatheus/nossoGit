@@ -23,7 +23,7 @@ echo "=============== Instalando codecs e pacotes basicos ==============="
 echo "==================================================================="
 echo "Pacotes a serem instalador:"
 echo "ubuntu-restricted-extras" #(ok)
-echo "build-essential" 			#(ok)
+#echo "build-essential" 			#(ok)
 echo "libgnome-keyring-dev" 	#(ok)
 echo "libavcodec-extra" 		#(ok)
 echo "lib32z1"					#(ok)
@@ -32,7 +32,7 @@ echo "lib32bz2-1.0"				#(ok)
 echo "libc6-i386"				#(ok)
 echo "lib32stdc++6"				#(ok)
 sleep 3
-sudo apt-get install -y ubuntu-restricted-extras build-essential libgnome-keyring-dev libavcodec-extra lib32z1 lib32ncurses5 lib32bz2-1.0 libc6-i386 lib32stdc++6
+sudo apt-get install -y ubuntu-restricted-extras libgnome-keyring-dev libavcodec-extra lib32z1 lib32ncurses5 lib32bz2-1.0 libc6-i386 lib32stdc++6
 clear
 #############################################################################
 read -p "Deseja instalar o Java: [y/n] " -re java
